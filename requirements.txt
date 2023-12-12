@@ -1,0 +1,16 @@
+ale_py==0.7.5
+AutoROM==0.6.1
+AutoROM.accept-rom-license==0.6.1
+gym==0.21.1
+imageio==2.31.5
+keyboard==0.13.5
+keras==2.10.0
+matplotlib==3.8.1
+numpy==1.24.3
+opencv_python==4.8.0.76
+pandas==2.0.3
+psutil==5.9.6
+PyAutoGUI==0.9.54
+PyGetWindow==0.0.9
+tensorflow==2.10.0
+tqdm==4.66.1
