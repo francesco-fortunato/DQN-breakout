@@ -443,14 +443,14 @@ while True:  # Run until solved
             # Use the target model for stability
             future_rewards = model_target.predict(state_next_sample)
             # Q value = reward + discount factor * expected future reward
-            #updated_q_values = rewards_sample + gamma * tf.reduce_max(
+            # updated_q_values = rewards_sample + gamma * tf.reduce_max(
             #    future_rewards, axis=1
-            #)
+            # )
 
             # Correct Implementation
             # If the game is over because the agent lost or won, there is no next state and the value is simply the reward 
 
-            updated_q_values = rewards_sample + (1- done_sample) * gamma * tf.reduce_max(future_rewards, axis=1)
+            updated_q_values = rewards_sample + (1 - done_sample) * gamma * tf.reduce_max(future_rewards, axis=1)
 
             # Create a mask so we only calculate loss on the updated Q-values
             masks = tf.one_hot(action_sample, num_actions)
