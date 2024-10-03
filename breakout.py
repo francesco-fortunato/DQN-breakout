@@ -135,44 +135,34 @@ def create_q_model():
     # Network defined by the Deepmind paper
     inputs = layers.Input(shape=(84, 84, 4,))
 
-    # Define an initializer using the He initialization method with a scale factor of 2.0
-    initializer = tf.keras.initializers.variance_scaling(scale=2.0)
-
-    # Convolutions on the frames on the screen
-
     # Define the first convolutional layer
     # - 32 filters, each 8x8 in size
     # - Stride of 4, meaning the filter moves 4 pixels at a time
     # - ReLU activation function is applied to the output
-    # - Use the previously defined initializer for setting up weights
-    layer1 = layers.Conv2D(32, 8, strides=4, activation="relu", kernel_initializer=initializer)(inputs)
+    layer1 = layers.Conv2D(32, 8, strides=4, activation="relu")(inputs)
 
     # Define the second convolutional layer
     # - 64 filters, each 4x4 in size
     # - Stride of 2
     # - ReLU activation function
-    # - Use the same initializer for setting up weights
-    layer2 = layers.Conv2D(64, 4, strides=2, activation="relu", kernel_initializer=initializer)(layer1)
+    layer2 = layers.Conv2D(64, 4, strides=2, activation="relu")(layer1)
 
     # Define the third convolutional layer
     # - 64 filters, each 3x3 in size
     # - Stride of 1
     # - ReLU activation function
-    # - Use the same initializer for setting up weights
-    layer3 = layers.Conv2D(64, 3, strides=1, activation="relu", kernel_initializer=initializer)(layer2)
+    layer3 = layers.Conv2D(64, 3, strides=1, activation="relu")(layer2)
 
     # Flatten the output from the convolutional layers
     layer4 = layers.Flatten()(layer3)
 
     # Define a fully connected layer with 512 neurons
     # - ReLU activation function
-    # - Use the same initializer for setting up weights
-    layer5 = layers.Dense(512, activation="relu", kernel_initializer=initializer)(layer4)
+    layer5 = layers.Dense(512, activation="relu")(layer4)
 
     # Output layer with num_actions neurons (4 in this case for the Breakout game)
     # - Linear activation function
-    # - Use the same initializer for setting up weights
-    action = layers.Dense(num_actions, activation="linear", kernel_initializer=initializer)(layer5)
+    action = layers.Dense(num_actions, activation="linear")(layer5)
 
 
     return keras.Model(inputs=inputs, outputs=action)

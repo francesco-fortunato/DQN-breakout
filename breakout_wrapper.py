@@ -287,7 +287,7 @@ class LazyFrames(object):
 def make_atari_breakout(env_id, max_episode_steps=None):
     """Make enviornment
     """
-    env = gym.make(env_id)
+    env = gym.make(env_id, render_mode="human")
     assert 'NoFrameskip' in env.spec.id
     env = NoopResetEnv(env, noop_max=30)
     env = MaxAndSkipEnv(env, skip=4)
