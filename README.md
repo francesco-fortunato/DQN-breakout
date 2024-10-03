@@ -3,7 +3,7 @@
 Welcome to the DQN-Breakout repository! This project implements a Deep Q-Network (DQN) to play the classic Breakout game using reinforcement learning. The DQN learns to navigate the game environment, maximizing its cumulative rewards over time.
 
 <div align="center">
-  <img src="https://github.com/francesco-fortunato/DQN-breakout/blob/main/recordings/ATARI_Breakout_Eval_model_21000_reward_311.gif" alt="Breakout Agent" width="200">
+  <img src="https://github.com/francesco-fortunato/DQN-breakout/blob/main/recordings/ATARI_Breakout_Eval_model_21700_reward_357-speed.gif" alt="Breakout Agent" width="200">
 </div>
 
 ## Table of Contents
